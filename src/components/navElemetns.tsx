@@ -24,5 +24,11 @@ export const navElements: navElementsType = [
         href: "/currency",
         name: 'Currency',
         icon: <CurrencyIcon />
+    },
+    {
+        id: "news",
+        href: "/news",
+        name: 'News',
+        icon: <CurrencyIcon />
     }
 ]

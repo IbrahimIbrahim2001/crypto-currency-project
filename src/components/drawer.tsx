@@ -5,9 +5,12 @@ import Drawer from 'react-modern-drawer'
 
 import 'react-modern-drawer/dist/index.css'
 
+import { navElements } from './navElemetns'
+import LinkElement from './linkElement'
+
 // only visible on xs screens
 export default function DrawerElement() {
-    const [isOpen, setIsOpen] = useState<boolean>(true)
+    const [isOpen, setIsOpen] = useState<boolean>(false)
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState)
     }
@@ -22,7 +25,11 @@ export default function DrawerElement() {
                 className='mr-2 bg-[#f6f8ff] p-4'
                 style={{ backgroundColor: "#f6f8ff" }}
             >
-                <div className='bg-red-500'>Hello World</div>
+                <section className='w-40 rounded-xl py-2'>
+                    {navElements.map((ele) => (
+                        <LinkElement key={ele.id} ele={ele} />
+                    ))}
+                </section >
             </Drawer>
         </div>
     )
