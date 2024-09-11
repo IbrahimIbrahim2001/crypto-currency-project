@@ -1,7 +1,8 @@
 import React from 'react';
 
-import DashboardIcon from "./dashboardIcon";
-import CurrencyIcon from './currencyIcon';
+import DashboardIcon from "./icons/dashboardIcon";
+import CurrencyIcon from './icons/currencyIcon';
+import NewsIcon from './icons/newsIcon';
 
 export default interface navElement {
     id: string;
@@ -29,6 +30,6 @@ export const navElements: navElementsType = [
         id: "news",
         href: "/news",
         name: 'News',
-        icon: <CurrencyIcon />
+        icon: <NewsIcon />
     }
 ]

@@ -1,17 +1,21 @@
+
 import Avatar from "./avatar";
+import { HideOnScroll } from "./HOC/hideOnScroll";
+import NotificationIcon from "./icons/notificationIcon";
 
 export default function Navbar() {
     return (
-        <nav className="flex justify-between items-center mb-5">
-
-            <p className="font-semibold  text-[#e5b030] text-sm sm:text-base">Crypto<span className="text-[#0339bf]">Currnecy</span> </p>
-            <div className="flex justify-between items-center gap-x-3">
-                <p>notification</p>
-                <div className="flex gap-x-1 items-center">
-                    <Avatar />
-                    {/* <p className="truncate">Bero255</p> */}
+        <HideOnScroll>
+            <nav className="flex justify-between bg-white sm:bg-transparent items-center mb-5 border-b-2 sm:border-0 pb-3 sm:py-0">
+                <p className="font-bold text-[rgb(229,176,48)] text-xl">Crypto<span className="text-[#0339bf]">Currnecy</span> </p>
+                <div className="flex justify-between items-center gap-x-3">
+                    <NotificationIcon />
+                    <div className="flex gap-x-2 items-center">
+                        <Avatar />
+                        <p className="hidden sm:block w-2/3 truncate">Bero255</p>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </HideOnScroll>
     )
 }
