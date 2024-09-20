@@ -2,7 +2,8 @@ import { Coin } from "@/types/coin";
 import Image from "next/image";
 import { Suspense } from "react";
 
-const api = process.env.COINGECKO_URL;
+// const api = process.env.COINGECKO_URL;
+const api = "https://api.coingecko.com/api/v3"; //temp
 
 export default async function CurrenciesPricesList() {
     const res = await fetch(`${api}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`)
