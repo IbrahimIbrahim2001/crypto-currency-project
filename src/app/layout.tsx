@@ -21,7 +21,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             {/*  dark:bg-[#050863] */}
-            <body className={`${inter.className} text-[#7da6e3]  sm:bg-green-500`}>
+            <body className={`${inter.className} text-[#7da6e3]  sm:bg-[#e9f2ff]`}>
                 <div className="p-5 mb-10 sm:mb-0 sm:h-screen select-none">
                     <Navbar />
                     <div className="block sm:flex gap-x-5">
