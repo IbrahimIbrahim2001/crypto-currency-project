@@ -1,3 +1,4 @@
+import { Coin } from "@/types/coin";
 import Image from "next/image";
 
 const api = process.env.COINGECKO_URL;
@@ -8,7 +9,7 @@ export default async function CurrenciesPricesList() {
 
     return (
         <div className="sm:bg-white rounded-xl py-2 sm:px-2 h-1/2 overflow-auto" >
-            {coins?.map((coin) => (
+            {coins?.map((coin: Coin) => (
                 <div key={coin.id} className="flex justify-between my-5 px-2">
                     <Image src={coin.image} alt={"coin image"} width={30} height={30} />
                     <p>{coin.name}</p>
