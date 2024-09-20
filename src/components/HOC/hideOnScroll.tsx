@@ -8,7 +8,7 @@ export const HideOnScroll = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
+            if (scrollTop > lastScrollTop && scrollTop > 1) {
                 setHide(true);
             } else {
                 setHide(false);
@@ -21,7 +21,7 @@ export const HideOnScroll = ({ children }: { children: React.ReactNode }) => {
     }, [lastScrollTop]);
 
     return (
-        <div className={`transition-transform duration-1000 sticky top-0 ${hide ? '-translate-y-full' : 'translate-y-0'}`}>
+        <div className={`transition-transform duration-1000 sticky top-0 ${hide ? '-translate-y-full pb-2' : 'translate-y-0'}`}>
             {children}
         </div>
     );

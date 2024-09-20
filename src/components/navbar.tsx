@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import Avatar from "./avatar";
 import { HideOnScroll } from "./HOC/hideOnScroll";
 import NotificationIcon from "./icons/notificationIcon";
