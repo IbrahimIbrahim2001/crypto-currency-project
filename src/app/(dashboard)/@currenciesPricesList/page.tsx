@@ -1,26 +1,30 @@
-import { Coin } from "@/types/coin";
-import Image from "next/image";
+import Coin from "@/components/coin";
+import { COIN } from "@/types/coin";
 import { Suspense } from "react";
-
-// const api = process.env.COINGECKO_URL;
-const api = "https://api.coingecko.com/api/v3"; //temp
+import { fetchCoinsPricesList } from "./_api/fetchCoinsPricesList";
 
 export default async function CurrenciesPricesList() {
-    const res = await fetch(`${api}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`)
-    const coins: Coin[] = await res.json();
+    const coins: COIN[] = await fetchCoinsPricesList();
     return (
-        <Suspense fallback={<p>Loading...</p>}>
-            <div className="sm:bg-white rounded-xl py-2 sm:px-2 h-1/2 overflow-auto" >
-                {coins?.map((coin: Coin) => (
-                    <div key={coin.id} className="flex justify-between my-5 px-2">
-                        <Image src={coin.image} alt={"coin image"} width={30} height={30} />
-                        <p>{coin.name}</p>
-                        <p>{coin.currentPrice}</p>
-                        <p>{coin.market_cap}</p>
-                        <p>{coin.price_change_percentage_24h}</p>
-                    </div>
-                ))}
-            </div>
-        </Suspense>
+        <>
+            <Suspense fallback={<p>Loading...</p>}>
+                {/* hidden for now on sm screens only */}
+                <div className="sm:hidden md:block sm:bg-white sm:pl-5 h-1/2 rounded-xl overflow-auto scrollbar-hidden">
+                    <table className="table-auto w-full">
+                        <thead className="sticky top-0 bg-white h-14 z-10">
+                            <th className="text-start sticky top-0 left-0 z-10 bg-white">Currency Name</th>
+                            <th className="text-start">current price</th>
+                            <th className="text-start">market capacity</th>
+                            <th className="text-start">24hr%</th>
+                        </thead>
+                        {coins?.map((coin: COIN) => (
+                            <tbody key={coin.id}>
+                                <Coin coin={coin} />
+                            </tbody>
+                        ))}
+                    </table>
+                </div>
+            </Suspense >
+        </>
     )
 }

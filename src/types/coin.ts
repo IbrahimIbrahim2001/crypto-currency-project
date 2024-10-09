@@ -1,8 +1,8 @@
-export type Coin = {
+export type COIN = {
     id: number,
     name: string,
     image: string,
-    currentPrice: number,
+    current_price: number,
     market_cap: number,
     price_change_percentage_24h: number,
 
