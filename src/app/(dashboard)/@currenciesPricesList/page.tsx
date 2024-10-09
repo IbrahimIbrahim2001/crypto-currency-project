@@ -2,9 +2,12 @@ import Coin from "@/components/coin";
 import { COIN } from "@/types/coin";
 import { Suspense } from "react";
 import { fetchCoinsPricesList } from "./_api/fetchCoinsPricesList";
+const api = process.env.NEXT_PUBLIC_COINGECKO_URL;
+
 
 export default async function CurrenciesPricesList() {
     const coins: COIN[] = await fetchCoinsPricesList();
+    console.log(process.env.NEXT_PUBLIC_COINGECKO_URL)
     return (
         <>
             <Suspense fallback={<p>Loading...</p>}>
