@@ -10,7 +10,7 @@ export default function News() {
                     <Link href="news">See All</Link>
                 </div>
             </div>
-            <div className='overflow-y-scroll h-fit max-h-60'>
+            <div className='overflow-y-scroll scrollbar-hidden h-fit max-h-60'>
                 <div className="h-1/4 mb-4">
                     <p className="break-words mb-1">
                         newsnewsnewsnewsnewsnewsnewsnewsnewsnewsnews255

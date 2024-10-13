@@ -8,7 +8,7 @@ export const HideOnScroll = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY
-            if (scrollTop > lastScrollTop && scrollTop > 10) {
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
                 setHide(true);
             } else {
                 setHide(false);

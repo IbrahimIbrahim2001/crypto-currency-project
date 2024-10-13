@@ -11,7 +11,7 @@ export default function layout({
 }) {
   return (
     <>
-      <div className="flex-1 flex flex-col h-[calc(100vh-96px)]">
+      <div className="flex-1 flex flex-col h-[calc(100vh-160px)] md:h-[calc(100vh-96px)]">
         {currencyStatistics}
         {currenciesPricesList}
       </div>
