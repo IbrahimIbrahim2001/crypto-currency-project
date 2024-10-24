@@ -12,7 +12,6 @@ export default function SkeletonLoadingForLargeScreens({ array }: { array: numbe
                                     <div className="rounded-full bg-slate-400 h-10 w-10"></div>
                                     <div className="bg-slate-400 rounded h-6 w-24"></div>
                                 </div>
-
                                 <div className="bg-slate-400 rounded h-6 w-48 mr-20"></div>
                                 <div className="bg-slate-400 rounded h-6 w-48 justify-self-end"></div>
                                 <div className="bg-slate-400 rounded h-6 w-12 justify-self-end"></div>
