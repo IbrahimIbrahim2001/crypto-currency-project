@@ -13,7 +13,6 @@ export default async function CurrenciesPricesList() {
     const coins: COIN[] = await fetchCoinsPricesList();
     return (
         <>
-
             <CurrenciesListTable coins={coins} /> {/* availbe for md screens and above */}
             <CurrenciesListForMobile coins={coins} /> {/* availbe for xs and sm screens only */}
         </>
