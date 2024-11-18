@@ -1,9 +1,9 @@
 import { COIN } from "@/types/coin";
-import Coin from "./coin";
+import { Coin } from "./coin";
 
 export default function CurrenciesListTable({ coins }: { coins: COIN[] }) {
     return (
-        <table className="hidden md:table table-auto w-full">
+        <table className="table-auto w-full">
             <thead className="sticky top-0 bg-white h-14 z-10">
                 <tr>
                     <th className="text-start sticky top-0 left-0">Currency Name</th>
