@@ -1,11 +1,12 @@
 import { COIN } from "@/types/coin";
 import { Coin } from "./coin";
 
+
 export default function CurrenciesListTable({ coins }: { coins: COIN[] }) {
     return (
-        <table className="table-auto w-full">
-            <thead className="sticky top-0 bg-white h-14 z-10">
-                <tr>
+        <>
+            <thead className="table-header-group sticky top-0 bg-white h-14 z-10">
+                <tr className="table-row">
                     <th className="text-start sticky top-0 left-0">Currency Name</th>
                     <th className="text-start">Current Price</th>
                     <th className="text-start">Market Capacity</th>
@@ -17,6 +18,6 @@ export default function CurrenciesListTable({ coins }: { coins: COIN[] }) {
                     <Coin coin={coin} />
                 </tbody>
             ))}
-        </table>
+        </>
     )
 }

@@ -12,11 +12,11 @@ export default async function CurrenciesPricesList() {
     const coins: COIN[] = await fetchCoinsPricesList();
     return (
         <>
-            <div className="hidden md:block">
-                <CurrenciesListTable coins={coins} /> {/* availbe for md screens and above */}
-            </div>
-            <div className="block md:hidden">
-                <CurrenciesListForMobile coins={coins} /> {/* availbe for xs and sm screens only */}
+            <table className="table-auto w-full hidden md:table">
+                <CurrenciesListTable coins={coins} />
+            </table>
+            <div className="md:hidden">
+                <CurrenciesListForMobile coins={coins} />
             </div>
         </>
     )
