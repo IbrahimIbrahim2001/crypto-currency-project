@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-export default function error() {
+export default function error({ error }: { error: Error }) {
     return (
-        <div>error</div>
+        <div>{error.message}</div>
     )
 }

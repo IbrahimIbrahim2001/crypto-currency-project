@@ -2,12 +2,12 @@ export default function layout({
   children,
   currenciesPricesList,
   currencyStatistics,
-  news,
+  newsList,
 }: {
   children: React.ReactNode;
   currenciesPricesList: React.ReactNode;
   currencyStatistics: React.ReactNode;
-  news: React.ReactNode;
+  newsList: React.ReactNode;
 }) {
   return (
     <>
@@ -15,7 +15,7 @@ export default function layout({
         {currencyStatistics}
         {currenciesPricesList}
       </div>
-      {news}
+      {newsList}
       {children}
     </>
   )

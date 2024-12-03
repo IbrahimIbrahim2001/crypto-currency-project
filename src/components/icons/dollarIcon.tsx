@@ -2,7 +2,7 @@ export default function DollarIcon() {
     return (
         <>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 1024 1024" strokeWidth={3} stroke="currentColor" className="size-7">
-                <g id="SVGRepo_bgCarrier" stroke-width="0" >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" >
                 </g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
                 </g>
