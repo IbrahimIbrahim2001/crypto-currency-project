@@ -12,7 +12,9 @@ export default async function NewsList() {
             <NewsBoxContent className='overflow-y-scroll scrollbar-hidden h-fit max-h-80 pt-4'>
                 {data?.results.map((news: NEWS) => (
                     <Fragment key={news.id}>
-                        <News news={news} />
+                        <div className="h-1/4 mb-4">
+                            <News news={news} />
+                        </div>
                     </Fragment>
                 ))}
             </NewsBoxContent>

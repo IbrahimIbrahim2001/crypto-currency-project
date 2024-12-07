@@ -21,7 +21,7 @@ export const HideOnScroll = ({ children }: { children: React.ReactNode }) => {
     }, [lastScrollTop]);
 
     return (
-        <div className={`transition-transform duration-1000 sticky top-0 ${hide ? '-translate-y-full pb-2' : 'translate-y-0'}`}>
+        <div className={`transition-transform duration-1000 sticky top-0 ${hide ? '-translate-y-full ' : 'translate-y-0'}`}>
             {children}
         </div>
     );
