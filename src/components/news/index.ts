@@ -1,5 +1,5 @@
 export { News } from "./news";
-export { NewsBox } from "./newsBox";
+export { NewsBoxContainer } from "./newsBoxContainer";
 export { NewsBoxHeader } from "./newsBoxHeader";
 export { NewsBoxContent } from "./newsBoxContent";
 export { NewsTitle } from "./newsTitle";

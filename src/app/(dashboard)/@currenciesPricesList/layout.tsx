@@ -1,6 +1,3 @@
-import { Suspense } from "react";
-import LoadingSkeleton from "./loading";
-
 export default function layout({ children }: { children: React.ReactNode }) {
     return (
         <>
