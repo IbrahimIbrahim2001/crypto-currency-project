@@ -20,8 +20,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            {/*  dark:bg-[#050863] */}
-            <body className={`${inter.className} text-[#7da6e3]  md:bg-[#e9f2ff] `}>
+            <body className={`${inter.className} text-primary  md:bg-main-background`}>
                 <Navbar />
                 <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
                     <div className="block sm:flex gap-x-5">
@@ -31,7 +30,7 @@ export default function RootLayout({
                 </div>
                 <BottomNavbar />
             </body>
-            {/* e5b030 658ecc 545456 e9f2ff*/}
+
         </html >
     );
 }

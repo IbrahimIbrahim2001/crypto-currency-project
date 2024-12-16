@@ -13,7 +13,7 @@ export default async function NewsList() {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-5 sm:p-3 overflow-y-scroll scrollbar-hidden sm:max-h-[40rem]'>
             {data?.results.map((news: NEWS) => (
                 <Fragment key={news.id}>
-                    <div className='bg-white rounded-md border md:border-none p-3'>
+                    <div className='bg-main-box rounded-md border md:border-none p-3'>
                         <News news={news} />
                     </div>
                 </Fragment>
