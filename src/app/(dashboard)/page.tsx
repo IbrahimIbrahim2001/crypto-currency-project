@@ -1,5 +1,4 @@
-import React from 'react'
-
+//can't delete this
 export default function Dashboard() {
-    return (<></>)
+    return <></>
 }

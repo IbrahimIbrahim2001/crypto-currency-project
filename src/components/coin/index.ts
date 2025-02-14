@@ -3,4 +3,4 @@ export { CoinPriceChangePer24hr } from "./coinPriceChangePer24hr";
 export { CoinName } from "./coinName";
 export { CoinImage } from "./coinImage";
 export { CoinMarketCapacity } from "./coinMarketCapacity";
-export { CoinCurrenctPrice } from "./coinCurrenctPrice";
+export { CoinCurrentPrice } from "./coinCurrentPrice";

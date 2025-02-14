@@ -1,10 +1,10 @@
 import { COIN } from "@/types/coin";
-import { CoinImage, CoinName, CoinMarketCapacity, CoinCurrenctPrice, CoinPriceChangePer24hr } from "./index";
+import { CoinImage, CoinName, CoinMarketCapacity, CoinCurrentPrice, CoinPriceChangePer24hr } from "./index";
 
 export const Coin = ({ coin }: { coin: COIN }) => {
     const coinImage = <CoinImage coinImage={coin.image} />
     const coinName = <CoinName coinName={coin.name} />
-    const coinCurrentPrice = <CoinCurrenctPrice currentPrice={coin.current_price} />
+    const coinCurrentPrice = <CoinCurrentPrice currentPrice={coin.current_price} />
     const coinMarketCapacity = <CoinMarketCapacity marketCapacity={coin.market_cap} />
     const coinPriceChangePer24hr = <CoinPriceChangePer24hr percentage={coin.price_change_percentage_24h} />
     return (

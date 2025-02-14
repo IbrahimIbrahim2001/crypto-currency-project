@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-export default function SkeletomLoadinForSmallScreens({ array }: { array: number[] }) {
+export default function SkeletonLoadingForSmallScreens({ array }: { array: number[] }) {
     return (
         <div className="md:hidden scrollbar-hidden rounded-xl py-1 overflow-hidden">
             {
