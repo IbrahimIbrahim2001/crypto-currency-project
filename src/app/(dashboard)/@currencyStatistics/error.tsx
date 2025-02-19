@@ -1,5 +1,7 @@
 'use client';
-export default function error({ error, reset }: { error: Error, reset: () => void }) {
+
+
+export default function Error({ error, reset }: { error: Error, reset: () => void }) {
     return (
         <div className="rounded-3xl border mb-3 sm:w-full h-32 sm:h-40 lg:h-1/2 flex flex-col justify-center space-y-3 sm:space-y-0 p-4 md:py-0 lg:py-4 ">
             <div>{error.message}</div>

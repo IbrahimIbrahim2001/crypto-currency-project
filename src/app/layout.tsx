@@ -6,6 +6,8 @@ import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
 import BottomNavbar from "@/components/bottomNavbar";
 import ThemeProvider from "@/context/ThemeProvider";
+import DrawerProvider from "@/context/DrawerProvider";
+import DrawerComponent from "@/components/drawer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,17 +24,18 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <ThemeProvider>
-                <body className={`${inter.className} text-primary md:bg-main-background`}>
-                    {/* <main className=""> */}
-                    <Navbar />
-                    <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
-                        <div className="block sm:flex gap-x-5">
-                            <Sidebar /> {/*visible on sm screens and above */}
-                            {children}
+                <body className={`${inter.className} text-primary md:bg-main-background dark:bg-dark-background`}>
+                    <DrawerProvider>
+                        <Navbar />
+                        <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
+                            <div className="block sm:flex gap-x-5">
+                                <Sidebar /> {/*visible on sm screens and above */}
+                                {children}
+                            </div>
                         </div>
-                    </div>
-                    <BottomNavbar /> {/*visible on xs screens (mobiles) */}
-                    {/* </main> */}
+                        <BottomNavbar /> {/*visible on xs screens (mobiles) */}
+                        <DrawerComponent /> {/*visible on xs screens (mobiles) */}
+                    </DrawerProvider>
                 </body>
             </ThemeProvider>
         </html >

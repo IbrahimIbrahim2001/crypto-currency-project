@@ -15,11 +15,8 @@ export default function SwiperComponent({ children }: { children: React.ReactNod
     };
     return (
         <>
-            <div className='-mx-5 overflow-hidden mb-5 sm:hidden'>
+            <div className='-mx-5 overflow-hidden mb-3 sm:hidden'>
                 <Slider {...settings}>
-                    {/* {currencyBoxElements.map((ele, index) => (
-                        <CurrencyBox key={index} coinName={ele.coinName} styles={ele.styles} />
-                    ))} */}
                     {children}
                 </Slider>
             </div>

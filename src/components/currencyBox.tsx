@@ -5,10 +5,11 @@ import CoinChart from "./coinChart";
 import { fetchHistoricalData } from "@/utils/fetchHistoricalData";
 
 export const CurrencyBox = async ({ coinId, styles }: { coinId: string, styles: string }) => {
+
     const coin: COIN_for_currencyBox = await fetchCurrencyStatistics(coinId);
     const historicalData = await fetchHistoricalData(coinId);
     return (
-        <div className={`rounded-3xl ${styles}  sm:w-full h-32 sm:h-40 lg:h-28 flex flex-col justify-center space-y-3 sm:space-y-0 p-4 md:py-0 lg:py-4 overflow-hidden`}>
+        <div className={`rounded-3xl ${styles}  sm:w-full h-32 sm:h-40 lg:h-28 flex flex-col justify-center space-y-3 sm:space-y-0 p-4 md:py-0 lg:py-4 overflow-hidden dark:bg-transparent dark:border dark:border-dark`}>
             <div className="flex justify-start items-center font-bold text-xl sm:text-lg gap-x-2">
                 <CoinImage coinImage={coin.image.large} />
                 <CoinName coinName={coin.name} />
@@ -22,4 +23,5 @@ export const CurrencyBox = async ({ coinId, styles }: { coinId: string, styles: 
             </div>
         </div>
     )
+    // return null;
 }

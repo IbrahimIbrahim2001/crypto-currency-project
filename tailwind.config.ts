@@ -22,11 +22,12 @@ const config: Config = {
       },
       colors: {
         'main-background': "#e9f2ff", //bg from md and above
-        'dark-background': "#3e3e3e", //dark mode
+        'dark-background': "#111827", //dark mode 111827
         'primary': "#7da6e3", //text
         'primary-light': "#7da6e3c1", //text
         'main-box': "#fff", //BoxContainer
-        'dark-box': "#3e3e3e", //BoxContainer
+        'dark-box': "#111827", //BoxContainer
+        'dark': "ffffff4d", // border
         //e5b030 658ecc 545456 e9f2ff
         //  dark:bg-[#050863]
       },

@@ -10,8 +10,8 @@ export const Coin = ({ coin }: { coin: COIN }) => {
     return (
         <>
             {/* hidden in xs and sm screens */}
-            <tr className="h-14 px-2 py-2 w-full rounded-xl hidden md:table-row">
-                <td className="flex items-center gap-x-2 sticky left-0 h-14 bg-main-box">
+            <tr className="h-14 px-2 py-2 w-full rounded-xl hidden md:table-row dark:bg-dark-box">
+                <td className="flex items-center gap-x-2 sticky left-0 h-14 bg-main-box dark:bg-dark-box">
                     {coinImage}
                     {coinName}
                 </td>
@@ -26,7 +26,7 @@ export const Coin = ({ coin }: { coin: COIN }) => {
                 </td>
             </tr>
             {/* visible only in xs and sm screens */}
-            <div className="md:hidden flex flex-row items-center justify-between py-1 my-2 border-b last:border-b-0 h-14">
+            <div className="md:hidden flex flex-row items-center justify-between py-1 my-2 border-b last:border-b-0 h-14 ">
                 <div className="flex items-center justify-start gap-x-3 overflow-hidden">
                     {coinImage}
                     <div>

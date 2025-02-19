@@ -5,7 +5,7 @@ import NotificationIcon from "./icons/notificationIcon";
 export default function Navbar() {
     return (
         <HideOnScroll>
-            <nav className=" flex justify-between  items-center bg-white md:bg-[#e9f2ff] sm:mb-0 border-b-2 sm:border-b-0 py-3 md:py-5 px-5">
+            <nav className=" flex justify-between  items-center dark:bg-dark-background dark:border-dark-background bg-white md:bg-[#e9f2ff] sm:mb-0 border-b-2 sm:border-b-0 py-3 md:py-5 px-5">
                 <p className="font-bold text-[rgb(229,176,48)] text-xl">Crypto<span className="text-[#0339bf]">Currency</span> </p>
                 <div className="flex justify-between items-center gap-x-3">
                     <NotificationIcon />

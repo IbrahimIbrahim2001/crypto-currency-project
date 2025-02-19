@@ -12,11 +12,11 @@ const currencyBoxElements: currencyBoxElement[] = [{
 },
 {
     coinId: "binancecoin",
-    styles: "bg-[#f4f4f4] text-[#323232]"
+    styles: "bg-[#f4f4f4] text-[#323232] dark:text-[#fff]"
 }
 ];
 
-export default function CurrencyStatistics() {
+export default async function CurrencyStatistics() {
     const CurrencyBoxMap =
         currencyBoxElements.map((ele, index) => (
             <CurrencyBox coinId={ele.coinId} styles={ele.styles} key={index} />
@@ -24,7 +24,7 @@ export default function CurrencyStatistics() {
     return (
         <>
             <SwiperComponent>{CurrencyBoxMap}</SwiperComponent>{/* visible only on mobile screens */}
-            <div className="hidden sm:block w-full md:bg-main-box rounded-xl h-1/2 py-2 md:px-2 mb-5">{/* visible on small screens and above*/}
+            <div className="hidden sm:block w-full md:bg-main-box dark:md:bg-dark-box dark:border dark:border-dark rounded-xl h-1/2 py-2 md:px-2 mb-5">{/* visible on small screens and above*/}
                 <div className="flex justify-between sm:gap-x-3 md:gap-x-4 px-2 py-4">
                     {CurrencyBoxMap}
                 </div>

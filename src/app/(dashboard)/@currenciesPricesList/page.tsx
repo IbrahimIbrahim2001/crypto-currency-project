@@ -12,7 +12,7 @@ export default async function CurrenciesPricesList() {
     const coins: COIN[] = await fetchCoinsPricesList();
     return (
         <>
-            <table className="table-auto w-full hidden md:table">
+            <table className="table-auto w-full hidden md:table ">
                 <CurrenciesListTable coins={coins} />
             </table>
             <div className="md:hidden">
