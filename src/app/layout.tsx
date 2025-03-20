@@ -8,6 +8,7 @@ import BottomNavbar from "@/components/bottomNavbar";
 import ThemeProvider from "@/context/ThemeProvider";
 import DrawerProvider from "@/context/DrawerProvider";
 import DrawerComponent from "@/components/drawer";
+import DrawerContent from "@/components/drawerContent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,7 +35,9 @@ export default function RootLayout({
                             </div>
                         </div>
                         <BottomNavbar /> {/*visible on xs screens (mobiles) */}
-                        <DrawerComponent /> {/*visible on xs screens (mobiles) */}
+                        <DrawerComponent> {/*on xs screens (mobiles) the drawer direction is bottom, on sm screens and above the drawer if from yhe right*/}
+                            <DrawerContent />
+                        </DrawerComponent>
                     </DrawerProvider>
                 </body>
             </ThemeProvider>

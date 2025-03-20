@@ -1,7 +1,9 @@
-import React from 'react'
+import CurrencyExchangeFormContent from '@/components/currencyExchangeFormContent'
 
 export default function Currency() {
     return (
-        <div>Currency</div>
+        <>
+            <CurrencyExchangeFormContent />
+        </>
     )
 }

@@ -11,7 +11,7 @@ export const Coin = ({ coin }: { coin: COIN }) => {
         <>
             {/* hidden in xs and sm screens */}
             <tr className="h-14 px-2 py-2 w-full rounded-xl hidden md:table-row dark:bg-dark-box">
-                <td className="flex items-center gap-x-2 sticky left-0 h-14 bg-main-box dark:bg-dark-box">
+                <td className="flex items-center gap-x-2 h-14 bg-main-box dark:bg-dark-box">
                     {coinImage}
                     {coinName}
                 </td>

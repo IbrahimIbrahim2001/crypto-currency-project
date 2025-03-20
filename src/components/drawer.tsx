@@ -1,44 +1,39 @@
 'use client';
 import { useDrawer } from '@/context/DrawerProvider';
+import { useEffect, useState } from 'react';
 import { Drawer } from 'vaul';
-import { MdDarkMode } from "react-icons/md";
-import { CiLight } from "react-icons/ci";
-import useTheme from 'next-theme';
 
-// only visible on xs screens
-export default function DrawerComponent() {
+interface DrawerComponentProps {
+    children: React.ReactNode;
+}
+
+export default function DrawerComponent({ children }: DrawerComponentProps) {
     const { isOpen, closeDrawer } = useDrawer();
-    const { setTheme } = useTheme();
+    const [drawerDirection, setDrawerDirection] = useState<'right' | 'bottom' | undefined>(undefined);
+
+    useEffect(() => {
+        const handleDirection = () => {
+            if (window.innerWidth < 640)
+                setDrawerDirection('bottom');
+            else setDrawerDirection('right');
+        };
+
+        handleDirection();
+        window.addEventListener('direction', handleDirection);
+        return () => window.removeEventListener('direction', handleDirection);
+    }, []);
     return (
-        <div className='sm:hidden'>
-            <Drawer.Root open={isOpen} onClose={closeDrawer}>
+        <>
+            <Drawer.Root open={isOpen} onClose={closeDrawer} direction={drawerDirection}>
+                <Drawer.Title />
                 <Drawer.Portal>
                     <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-                    <Drawer.Content className="bg-gray-100 flex flex-col rounded-t-[10px] mt-24 h-fit fixed bottom-0 left-0 right-0 outline-none">
-                        <div className="p-4 bg-white dark:bg-gray-900 rounded-t-[10px] flex-1">
-                            <div aria-hidden className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
-                            <div className="max-w-md mx-auto">
-                                <Drawer.Title className="font-medium mb-4 text-gray-900">Drawer for React.</Drawer.Title>
-                                <p>Preferred Theme:</p>
-                                <div className='flex items-center justify-between gap-x-2'>
-                                    <div className='border rounded-lg border-main-background h-16 w-full' onClick={() => setTheme('dark')}>
-                                        <p>
-                                            Dark Mode
-
-                                        </p>
-                                        <MdDarkMode />
-                                    </div>
-                                    <div className='border rounded-lg border-main-background h-16 w-full' onClick={() => setTheme('light')}>
-                                        <p>light Mode</p>
-                                        <CiLight />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <Drawer.Content className="sm:h-screen w-full sm:w-[310px] bg-gray-100 flex flex-col rounded-t-[10px] mt-24 h-fit fixed bottom-0 right-0 z-50 outline-none" style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}>
+                        {children}
                     </Drawer.Content>
                 </Drawer.Portal>
             </Drawer.Root>
-        </div>
+        </ >
     )
 }
 

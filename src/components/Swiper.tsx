@@ -16,7 +16,7 @@ export default function SwiperComponent({ children }: { children: React.ReactNod
     return (
         <>
             <div className='-mx-5 overflow-hidden mb-3 sm:hidden'>
-                <Slider {...settings}>
+                <Slider {...settings} >
                     {children}
                 </Slider>
             </div>

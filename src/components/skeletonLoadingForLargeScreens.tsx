@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 export default function SkeletonLoadingForLargeScreens({ array }: { array: number[] }) {
     return (
-        <div className="sm:bg-main-box overflow-auto sm:pr-5 scrollbar-hidden rounded-xl pt-10 pb-2">
+        <div className="dark:sm:bg-[#111840] overflow-auto sm:px-5 scrollbar-hidden rounded-xl pt-10 pb-2">
             {
                 array.map((_ele: number, index: number) => (
                     <Fragment key={index}>
