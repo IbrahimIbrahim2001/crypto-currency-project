@@ -23,8 +23,10 @@ const config: Config = {
       colors: {
         'main-background': "#e9f2ff", //bg from md and above
         'dark-background': "#111827", //dark mode 111827
-        'primary': "#7da6e3", //text
-        'primary-light': "#7da6e3c1", //text
+        'primary': "#7da6e3", //text for light mode
+        'primary-light': "#7da6e3c1", //text lighter 
+        'primary-dark': "#7da6e3b3", //text for dark mode
+        'secondary': "#f7f7f7", //text for dark mode
         'main-box': "#fff", //BoxContainer
         'dark-box': "#111827", //BoxContainer
         'dark': "ffffff4d", // border

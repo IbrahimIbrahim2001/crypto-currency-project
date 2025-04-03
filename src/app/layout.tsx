@@ -11,6 +11,9 @@ import DrawerComponent from "@/components/drawer";
 import DrawerContent from "@/components/drawerContent";
 
 const inter = Inter({ subsets: ["latin"] });
+import {
+    ClerkProvider,
+} from '@clerk/nextjs'
 
 export const metadata: Metadata = {
     title: "Crypto Currencies Dashboard",
@@ -23,24 +26,26 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <ThemeProvider>
-                <body className={`${inter.className} text-primary md:bg-main-background dark:bg-dark-background`}>
-                    <DrawerProvider>
-                        <Navbar />
-                        <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
-                            <div className="block sm:flex gap-x-5">
-                                <Sidebar /> {/*visible on sm screens and above */}
-                                {children}
+        <ClerkProvider>
+            <html lang="en" suppressHydrationWarning>
+                <ThemeProvider>
+                    <body className={`${inter.className} text-primary md:bg-main-background dark:bg-dark-background`}>
+                        <DrawerProvider>
+                            <Navbar />
+                            <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
+                                <div className="block sm:flex gap-x-5">
+                                    <Sidebar /> {/*visible on sm screens and above */}
+                                    {children}
+                                </div>
                             </div>
-                        </div>
-                        <BottomNavbar /> {/*visible on xs screens (mobiles) */}
-                        <DrawerComponent> {/*on xs screens (mobiles) the drawer direction is bottom, on sm screens and above the drawer if from yhe right*/}
-                            <DrawerContent />
-                        </DrawerComponent>
-                    </DrawerProvider>
-                </body>
-            </ThemeProvider>
-        </html >
+                            <BottomNavbar /> {/*visible on xs screens (mobiles) */}
+                            <DrawerComponent> {/*on xs screens (mobiles) the drawer direction is bottom, on sm screens and above the drawer if from yhe right*/}
+                                <DrawerContent />
+                            </DrawerComponent>
+                        </DrawerProvider>
+                    </body>
+                </ThemeProvider>
+            </html >
+        </ClerkProvider>
     );
 }

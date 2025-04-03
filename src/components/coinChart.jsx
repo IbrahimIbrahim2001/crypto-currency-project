@@ -63,15 +63,15 @@ export default function CoinChart({ historicalData }) {
     },
     plugins: {
       legend: {
-        display: false, // Hide dataset labels
+        display: false,
       },
       tooltip: {
-        enabled: false, // Hide tooltips
+        enabled: false,
       },
     },
     elements: {
       line: {
-        backgroundColor: "transparent", // Ensure the line background is transparent
+        backgroundColor: "transparent",
       },
     },
     layout: {
