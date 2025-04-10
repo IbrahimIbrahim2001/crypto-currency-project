@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import navElement from './navElemetns';
+import navElement from './navElements';
 import { usePathname } from 'next/navigation';
 import ChivronRightIcon from './icons/chivronRightIcon';
 

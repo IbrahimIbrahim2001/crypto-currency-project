@@ -5,7 +5,7 @@ const array = [1, 2, 3];
 
 const Skelton = () => {
     return (
-        <div className="animate-pulse rounded-3xl sm:w-full h-32 bg-slate-100 sm:h-40 lg:h-28 flex flex-col justify-center space-y-3 sm:space-y-0 p-4 md:py-0 lg:py-4 overflow-hidden dark:bg-transparent dark:border dark:border-dark">
+        <div className="animate-pulse rounded-3xl sm:w-full h-32 bg-slate-100 sm:h-32 lg:h-28 flex flex-col justify-center space-y-3 sm:space-y-0 p-4 md:py-0 lg:py-4 overflow-hidden dark:bg-transparent dark:border dark:border-dark">
             <div className="flex justify-start items-center font-bold text-xl sm:text-lg gap-x-2 my-2">
                 <div className='rounded-full bg-slate-400 h-10 w-10' />
                 <div className='bg-slate-400 rounded h-6 w-24' />

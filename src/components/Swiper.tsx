@@ -1,12 +1,9 @@
 "use client";
 
-import { currencyBoxElement } from '@/types/currencyBoxElement';
-import { CurrencyBox } from './currencyBox';
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
-// { currencyBoxElements }: { currencyBoxElements: currencyBoxElement[] }
 export default function SwiperComponent({ children }: { children: React.ReactNode }) {
     const settings = {
         className: "mb-3",

@@ -44,7 +44,7 @@ async function getHistoricalChartData(currencyTo: string): Promise<{ labels: str
 }
 
 
-export async function exchangeRate(prevState: FormState, formData: FormData) {
+export async function exchangeRate(_prevState: FormState, formData: FormData) {
     const amount = formData.get("amount") as string;
     const currencyFrom = formData.get("currencyFrom") as string;
     const currencyTo = formData.get("currencyTo") as string;

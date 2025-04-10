@@ -1,4 +1,5 @@
-import { NewsBoxContainer } from "@/components/news"
+import { NewsBoxContainer } from "@/components/news/newsBoxContainer";
+
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (

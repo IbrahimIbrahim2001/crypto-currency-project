@@ -19,9 +19,19 @@ model tenants {
 }
 
 model User {
-  id          String   @id @default(cuid())
-  clerkUserId String   @unique
-  email       String   @unique
+  id          String       @id @default(cuid())
+  clerkUserId String       @unique
+  email       String       @unique
   username    String?
-  createdAt   DateTime @default(now())
+  createdAt   DateTime     @default(now())
+  savedNews   Saved_news[]
+}
+
+model Saved_news {
+  id        String @id @default(cuid())
+  userId    String
+  newsId    Int @unique
+  text      String
+  publisher String
+  user      User   @relation(fields: [userId], references: [id])
 }

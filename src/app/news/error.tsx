@@ -1,6 +1,6 @@
 'use client';
 
-import { NewsBoxContent } from "@/components/news";
+import { NewsBoxContent } from "@/components/news/newsBoxContent";
 
 export default function error({ error, reset }: { error: Error, reset: () => void }) {
     return (

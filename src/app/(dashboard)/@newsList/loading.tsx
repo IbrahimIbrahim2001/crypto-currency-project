@@ -1,4 +1,4 @@
-import { NewsBoxContent } from '@/components/news'
+import { NewsBoxContent } from "@/components/news/newsBoxContent";
 
 export default function NewsLoader() {
     return (

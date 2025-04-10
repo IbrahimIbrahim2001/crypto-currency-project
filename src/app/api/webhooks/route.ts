@@ -54,12 +54,13 @@ export async function POST(req: Request) {
     // console.log(`Received webhook with ID ${id} and event type of ${eventType}`)
     // console.log('Webhook payload:', body)
     if (evt.type === "user.created") {
-        const { id, first_name, email_addresses } = evt.data;
+        const { id, username, email_addresses } = evt.data;
+        console.log(evt.data);
         try {
             const newUser = await prisma.user.create({
                 data: {
                     clerkUserId: id,
-                    username: first_name,
+                    username: username,
                     email: email_addresses[0].email_address
                 }
             })

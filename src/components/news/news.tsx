@@ -1,15 +1,16 @@
 import { NEWS } from "@/types/news";
-import { NewsPublishTime, NewsPublisher, NewsTitle } from "./index";
+import { NewsTitle } from "./newsTitle";
+import { NewsPublishTime } from "./newsPublishTime";
+import { NewsPublisher } from "./newsPublisher";
 
-export const News = ({ news }: { news: NEWS }) => {
+export const News = ({ news, children }: { news: NEWS, children: React.ReactNode }) => {
     return (
         <>
-            <NewsTitle title={news.title} />
-            <p className="text-sm flex space-x-0.5 text-primary-light">
-                <NewsPublisher name={news.source.title} />
-                <span>|</span>
-                <NewsPublishTime publishedAt={news.published_at} />
-            </p>
+            {children}
         </>
     )
 }
+
+News.Title = NewsTitle;
+News.Publisher = NewsPublisher;
+News.PublishTime = NewsPublishTime;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { navElements } from './navElemetns'
+import { navElements } from './navElements'
 import LinkElement from './linkElement'
 
 // only visible on sm screens and above

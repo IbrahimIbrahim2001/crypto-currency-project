@@ -3,6 +3,7 @@ import React from 'react';
 import DashboardIcon from "./icons/dashboardIcon";
 import CurrencyIcon from './icons/currencyIcon';
 import NewsIcon from './icons/newsIcon';
+import { CiBookmark } from 'react-icons/ci';
 
 export default interface navElement {
     id: string;
@@ -31,5 +32,11 @@ export const navElements: navElementsType = [
         href: "/news",
         name: 'News',
         icon: <NewsIcon />
+    },
+    {
+        id: "bookmarks",
+        href: "/bookmarks",
+        name: 'Bookmarks',
+        icon: <CiBookmark className="size-5" />
     }
 ]
