@@ -12,9 +12,7 @@ export default function DrawerContent() {
                     <ThemeSwitcherButton theme="dark" />
                     <ThemeSwitcherButton theme="light" />
                 </div>
-
             </div>
         </div>
-
     )
 }

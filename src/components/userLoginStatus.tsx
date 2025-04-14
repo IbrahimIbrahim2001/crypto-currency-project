@@ -8,7 +8,7 @@ export default async function UserLoginStatus() {
     return (
         <>
             <SignedOut>
-                <SignInButton mode="modal" >
+                <SignInButton mode="modal">
                     <div className="flex gap-x-2 my-3 text-center font-bold border rounded-lg border-main-background h-16 w-full place-content-center place-items-center">
                         <FaSign /> Sign in
                     </div>
@@ -28,7 +28,7 @@ export default async function UserLoginStatus() {
                 </div>
             </Link>
             <SignedIn>
-                <SignOutButton >
+                <SignOutButton>
                     <div className="flex gap-x-2 my-3 text-center font-semibold border rounded-lg border-red-500 text-red-500 h-16 w-full place-content-center place-items-center">
                         Sign out <FaSignOutAlt />
                     </div>

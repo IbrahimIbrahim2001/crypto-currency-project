@@ -1,6 +1,5 @@
 'use server';
 
-import { auth } from '@clerk/nextjs/server';
 import { deleteSavedNews, postNews } from '@/app/bookmarks/api';
 import { revalidatePath } from 'next/cache';
 

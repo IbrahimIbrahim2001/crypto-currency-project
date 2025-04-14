@@ -9,11 +9,14 @@ import ThemeProvider from "@/context/ThemeProvider";
 import DrawerProvider from "@/context/DrawerProvider";
 import DrawerComponent from "@/components/drawer";
 import DrawerContent from "@/components/drawerContent";
+import { Modal } from "@/components/modal";
+import ModalProvider from "@/context/ModalProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 import {
     ClerkProvider,
 } from '@clerk/nextjs'
+import { SearchModalContent } from "@/components/searchModalContent";
 
 export const metadata: Metadata = {
     title: "Crypto Currencies Dashboard",
@@ -31,17 +34,22 @@ export default function RootLayout({
                 <ThemeProvider>
                     <body className={`${inter.className} text-primary md:bg-main-background dark:bg-dark-background`}>
                         <DrawerProvider>
-                            <Navbar />
-                            <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
-                                <div className="block sm:flex gap-x-5">
-                                    <Sidebar /> {/*visible on sm screens and above */}
-                                    {children}
+                            <ModalProvider>
+                                <Navbar />
+                                <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
+                                    <div className="block sm:flex gap-x-5">
+                                        <Sidebar /> {/*visible on sm screens and above */}
+                                        {children}
+                                    </div>
                                 </div>
-                            </div>
-                            <BottomNavbar /> {/*visible on xs screens (mobiles) */}
-                            <DrawerComponent> {/*on xs screens (mobiles) the drawer direction is bottom, on sm screens and above the drawer if from yhe right*/}
-                                <DrawerContent />
-                            </DrawerComponent>
+                                <BottomNavbar /> {/*visible on xs screens (mobiles) */}
+                                <DrawerComponent> {/*on xs screens (mobiles) the drawer direction is bottom, on sm screens and above the drawer if from yhe right*/}
+                                    <DrawerContent />
+                                </DrawerComponent>
+                                <Modal>
+                                    <SearchModalContent />
+                                </Modal>
+                            </ModalProvider>
                         </DrawerProvider>
                     </body>
                 </ThemeProvider>
