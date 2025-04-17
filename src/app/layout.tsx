@@ -11,12 +11,10 @@ import DrawerComponent from "@/components/drawer";
 import DrawerContent from "@/components/drawerContent";
 import { Modal } from "@/components/modal";
 import ModalProvider from "@/context/ModalProvider";
+import { ClerkProvider } from '@clerk/nextjs'
+import { SearchModalContent } from "@/components/searchModalContent";
 
 const inter = Inter({ subsets: ["latin"] });
-import {
-    ClerkProvider,
-} from '@clerk/nextjs'
-import { SearchModalContent } from "@/components/searchModalContent";
 
 export const metadata: Metadata = {
     title: "Crypto Currencies Dashboard",

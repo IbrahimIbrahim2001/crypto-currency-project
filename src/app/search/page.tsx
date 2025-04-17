@@ -1,7 +1,12 @@
 import { CoinCurrentPrice, CoinImage, CoinName, CoinPriceChangePer24hr } from "@/components/coin";
 import TabsContent from "@/components/tabsContent";
 import { fetchCurrencyStatistics } from "@/utils/fetchCurrencyStatistics";
-import * as Tabs from '@radix-ui/react-tabs';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Crypto Currencies Search Result",
+    description: "search results for crypto currency",
+};
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ coin: string }> }) {
     const coinId = (await searchParams).coin;

@@ -1,5 +1,12 @@
 import { UserProfile } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "User Profile Page",
+    description: "Crypto Currencies - User Profile Page",
+};
+
 
 export default function UserProfilePage() {
     return (

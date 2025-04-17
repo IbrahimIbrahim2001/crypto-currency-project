@@ -9,12 +9,13 @@ export default function BookmarkNotificationToastContainer() {
         <ToastContainer
             position="top-center"
             toastStyle={{
-                borderRadius: "10px",
+                borderRadius: "12px",
                 background: `${theme === 'dark' ? "#1e293b" : "#f2f2f2"}`,
                 color: "#7da6e3c1",
                 border: "1px solid",
-                borderColor: "#7da6e3c1"
+                borderColor: "#7da6e3c1",
             }}
+            className="mt-3 px-3 space-y-2 sm:space-y-1"
             autoClose={2000}
             hideProgressBar={true}
             newestOnTop={false}

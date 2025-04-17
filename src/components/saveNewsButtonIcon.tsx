@@ -4,7 +4,7 @@ import { useBookmarkNotification } from "@/context/BookmarkNotificationProvider"
 import { useOptimistic, useTransition } from "react";
 import { CiBookmark } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
-
+import { motion } from "motion/react";
 
 export const SaveNewsButtonIcon = ({ initialBookmarked }: { initialBookmarked?: boolean }) => {
     const [_isPending, startTransition] = useTransition();
@@ -24,7 +24,10 @@ export const SaveNewsButtonIcon = ({ initialBookmarked }: { initialBookmarked?: 
 
     return (
         <>
-            <button type="submit" onClick={handleSubmit}>
+            <motion.button
+                whileTap={{ scale: 1.5 }}
+                type="submit"
+                onClick={handleSubmit}>
                 {
                     optimisticBookmarked ? (
                         <FaBookmark className='text-primary' />
@@ -32,7 +35,7 @@ export const SaveNewsButtonIcon = ({ initialBookmarked }: { initialBookmarked?: 
                         <CiBookmark className='text-primary' />
                     )
                 }
-            </button>
+            </motion.button>
         </>
     )
 }

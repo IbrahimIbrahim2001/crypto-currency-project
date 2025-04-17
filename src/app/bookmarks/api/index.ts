@@ -6,12 +6,12 @@ const prisma = new PrismaClient();
 async function fetchUserId() {
     const { userId: clerkUserId } = await auth();
     if (clerkUserId) {
-
         const user = await prisma.user.findUnique({
             where: { clerkUserId }
         });
         return user?.id;
     }
+    // throw new Error("Error Loading your Data");
 }
 export async function fetchSavedNews() {
     const userId = await fetchUserId();
@@ -25,8 +25,6 @@ export async function fetchSavedNews() {
 export async function postNews(newsId: number, text: string, publisher: string) {
     const userId = await fetchUserId();
     const isNewsItemIdFound = await getNewsItemId(newsId);
-    console.log(await getNewsItemId(newsId))
-
     if (!userId) {
         throw new Error("User not found in database");
     }
@@ -47,14 +45,12 @@ export async function postNews(newsId: number, text: string, publisher: string) 
 
 export async function getNewsItemId(newsId: number) {
     const userId = await fetchUserId();
-    //error
     const newsItem = await prisma.saved_news.findUnique({
         where: {
             userId,
             newsId
         },
     });
-
     return !!newsItem;
 }
 

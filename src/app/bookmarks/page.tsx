@@ -2,6 +2,12 @@ import { SignIn } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { fetchSavedNews } from "./api";
 import { BookmarksList } from "./bookmarksList";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "bookmarks",
+    description: "List of bookmarks",
+};
 
 export default async function Bookmarks() {
     const { userId: clerkUserId } = await auth();
