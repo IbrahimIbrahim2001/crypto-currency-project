@@ -3,7 +3,7 @@ import { useModal } from '@/context/ModalProvider';
 import * as Dialog from '@radix-ui/react-dialog';
 import { IoCloseSharp } from "react-icons/io5";
 
-export const Modal = ({ children }: { children?: React.ReactNode }) => {
+export default function Modal({ children }: { children?: React.ReactNode }) {
     const { isOpen, closeModal } = useModal();
     return (
         <Dialog.Root open={isOpen}>

@@ -7,19 +7,20 @@ import Sidebar from "@/components/sidebar";
 import BottomNavbar from "@/components/bottomNavbar";
 import ThemeProvider from "@/context/ThemeProvider";
 import DrawerProvider from "@/context/DrawerProvider";
-import DrawerComponent from "@/components/drawer";
 import DrawerContent from "@/components/drawerContent";
-import { Modal } from "@/components/modal";
 import ModalProvider from "@/context/ModalProvider";
 import { ClerkProvider } from '@clerk/nextjs'
 import { SearchModalContent } from "@/components/searchModalContent";
-
+import { lazy } from 'react';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Crypto Currencies Dashboard",
     description: "List of Crypto Currencies Prices in US Dollars",
 };
+
+const Modal = lazy(() => import("@/components/modal"));
+const DrawerComponent = lazy(() => import("@/components/drawer"));
 
 export default function RootLayout({
     children,

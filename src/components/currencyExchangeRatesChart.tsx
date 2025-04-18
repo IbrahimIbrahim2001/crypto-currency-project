@@ -40,7 +40,7 @@ interface CurrencyExchangeRatesChartProps {
 
 
 
-export const CurrencyExchangeRatesChart = ({ chartData }: CurrencyExchangeRatesChartProps) => {
+export default function CurrencyExchangeRatesChart({ chartData }: CurrencyExchangeRatesChartProps) {
     const pathName = usePathname();
     const CurrencyPath = pathName.includes("currency");
     const options: ChartOptions<"line"> = {

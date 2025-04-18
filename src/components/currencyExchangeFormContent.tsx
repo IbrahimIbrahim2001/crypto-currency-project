@@ -1,13 +1,13 @@
 "use client";
 
 import { exchangeRate, FormState } from "@/actions/exchangeProduct";
-import CurrencyExchangeForm from "@/components/currencyExchangeForm";
 import SubmitButton from "@/components/submitButton";
-import { usePathname } from "next/navigation";
-import { useActionState } from "react";
-import { CurrencyExchangeRatesChart } from "./currencyExchangeRatesChart";
 import Form from 'next/form';
+import { usePathname } from "next/navigation";
+import { lazy, Suspense, useActionState } from "react";
 
+const CurrencyExchangeForm = lazy(() => import("@/components/currencyExchangeForm"));
+const CurrencyExchangeRatesChart = lazy(() => import("./currencyExchangeRatesChart"))
 export default function CurrencyExchangeFormContent() {
     const initialState: FormState = {
         errors: {},
@@ -30,17 +30,19 @@ export default function CurrencyExchangeFormContent() {
     const additionalStylesFormMainDiv = CurrencyPath ? "sm:h-main-layout w-full sm:grid sm:place-content-center sm:place-items-center" : "px-3"
     const additionalStylesFomInnerDiv = CurrencyPath ? "bg-white dark:bg-transparent rounded-md sm:h-96 grid place-content-center place-items-center sm:w-9/12" : "flex justify-between"
     return (
-        <div className={additionalStylesFormMainDiv}>
-            <div className={additionalStylesFomInnerDiv}>
-                <CurrencyExchangeRatesChart chartData={transformedChartData} />
-                <div className={CurrencyPath ? "md:w-2/3" : "w-1/2"}>
-                    <Form action={formAction}>
-                        <CurrencyExchangeForm name="currencyFrom" errorMsg={state.errors?.amount} />
-                        <CurrencyExchangeForm disabled name="currencyTo" convertedAmount={state.convertedAmount} />
-                        <SubmitButton />
-                    </Form>
+        <Suspense fallback={<div className="w-full flex justify-center items-center text-xl font-bold">loading...</div>}>
+            <div className={additionalStylesFormMainDiv}>
+                <div className={additionalStylesFomInnerDiv}>
+                    <CurrencyExchangeRatesChart chartData={transformedChartData} />
+                    <div className={CurrencyPath ? "md:w-2/3" : "w-1/2"}>
+                        <Form action={formAction}>
+                            <CurrencyExchangeForm name="currencyFrom" errorMsg={state.errors?.amount} />
+                            <CurrencyExchangeForm disabled name="currencyTo" convertedAmount={state.convertedAmount} />
+                            <SubmitButton />
+                        </Form>
+                    </div>
                 </div>
-            </div>
-        </div >
+            </div >
+        </Suspense>
     )
 }

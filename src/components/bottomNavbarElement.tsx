@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import navElement from './navElements';
 import { motion } from "motion/react";
 
-
 interface LinkElementProps { ele: navElement };
 
 export default function BottomNavbarElement({ ele }: LinkElementProps) {
@@ -13,7 +12,7 @@ export default function BottomNavbarElement({ ele }: LinkElementProps) {
     const isActive = pathname === ele.href;
 
     return (
-        <Link href={ele.href} className="w-1/3">
+        <Link href={ele.href} className="w-1/3" prefetch={true}>
             <motion.ul
                 whileTap={{ scale: 0.95 }}
                 className={`flex flex-col items-center justify-center ${isActive ? "text-[#0339bf] font-semibold" : "text-[#e5b030]"}`}>
