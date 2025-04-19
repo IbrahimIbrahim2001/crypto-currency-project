@@ -22,16 +22,14 @@ const config: Config = {
       },
       colors: {
         'main-background': "#e9f2ff", //bg from md and above
-        'dark-background': "#111827", //dark mode 111827
+        'dark-background': "#111827", //dark mode
         'primary': "#7da6e3", //text for light mode
         'primary-light': "#7da6e3c1", //text lighter 
-        'primary-dark': "#7da6e3b3", //text for dark mode
-        'secondary': "#f7f7f7", //text for dark mode
+        'primary-dark': "#E5E7EB", //text for dark mode
         'main-box': "#fff", //BoxContainer
         'dark-box': "#111827", //BoxContainer
         'dark': "ffffff4d", // border
-        //e5b030 658ecc 545456 e9f2ff
-        //  dark:bg-[#050863]
+        // ---not used--- 'light-text': "#1A365D"
       },
       height: {
         'main-layout': "calc(100vh - 160px)",

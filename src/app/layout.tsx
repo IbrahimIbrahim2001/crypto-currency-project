@@ -22,7 +22,7 @@ export default function RootLayout({
         <ClerkProvider>
             <html lang="en" suppressHydrationWarning>
                 <ThemeProvider>
-                    <body className={`${inter.className} text-primary md:bg-main-background dark:bg-dark-background`}>
+                    <body className={`${inter.className} text-primary dark:text-primary-dark md:bg-main-background dark:bg-dark-background`}>
                         <DrawerProvider>
                             <ModalProvider>
                                 {children}

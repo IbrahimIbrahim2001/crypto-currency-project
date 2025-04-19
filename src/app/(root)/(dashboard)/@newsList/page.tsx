@@ -13,7 +13,7 @@ export default async function NewsList() {
                     <div className="h-1/4 mb-4">
                         <News news={news} >
                             <News.Title title={news.title} />
-                            <p className="text-sm flex space-x-0.5 text-primary-light">
+                            <p className="text-sm flex space-x-0.5 opacity-70">
                                 <News.Publisher name={news.source.title} />
                                 <span>|</span>
                                 <News.PublishTime publishedAt={news.published_at ? news.published_at : ""} />

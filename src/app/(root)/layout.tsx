@@ -17,19 +17,19 @@ export default function layout({
     return (
         <>
             <Navbar />
+            <Modal>
+                <SearchModalContent />
+            </Modal>
             <div className="p-5 md:py-0 mb-10 sm:mb-0 select-none">
                 <div className="block sm:flex gap-x-5">
                     <Sidebar /> {/*visible on sm screens and above*/}
                     {children}
                 </div>
             </div>
-            <BottomNavbar /> {/*visible on xs screens (mobiles)*/}
             <DrawerComponent> {/*on xs screens (mobiles) the drawer direction is bottom, on sm screens and above the drawer if from yhe right*/}
                 <DrawerContent />
             </DrawerComponent>
-            <Modal>
-                <SearchModalContent />
-            </Modal>
+            <BottomNavbar /> {/*visible on xs screens (mobiles)*/}
         </>
     )
 }

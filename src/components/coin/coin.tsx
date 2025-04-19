@@ -26,7 +26,7 @@ export const Coin = ({ coin }: { coin: COIN }) => {
                 </td>
             </tr>
             {/* visible only in xs and sm screens */}
-            <div className="md:hidden flex flex-row items-center justify-between py-1 my-2 border-b last:border-b-0 h-14 ">
+            <div className="md:hidden flex flex-row items-center justify-between py-1 my-2 border-b last:border-b-0 h-14">
                 <div className="flex items-center justify-start gap-x-3 overflow-hidden">
                     {coinImage}
                     <div>
