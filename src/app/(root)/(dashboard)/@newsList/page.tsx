@@ -4,8 +4,6 @@ import { NEWS } from '@/types/news';
 import { fetchCurrenciesNews } from '@/utils/fetchCurrenciesNews';
 import { Fragment } from 'react';
 
-
-
 export default async function NewsList() {
     const newsArray = await fetchCurrenciesNews();
     return (

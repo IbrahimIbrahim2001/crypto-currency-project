@@ -1,5 +1,5 @@
 import { auth } from '@clerk/nextjs/server';
-import { getNewsItemId } from '@/app/bookmarks/api';
+import { getNewsItemId } from '@/app/(root)/bookmarks/api';
 import { NEWS } from '@/types/news';
 import { SaveNewsButtonIcon } from './saveNewsButtonIcon';
 import { handlePostNews } from '@/actions/bookmarks';

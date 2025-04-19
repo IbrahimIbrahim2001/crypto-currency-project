@@ -1,6 +1,6 @@
 'use server';
 
-import { deleteSavedNews, postNews } from '@/app/bookmarks/api';
+import { deleteSavedNews, postNews } from '@/app/(root)/bookmarks/api';
 import { revalidatePath } from 'next/cache';
 
 export async function handlePostNews(news: {
