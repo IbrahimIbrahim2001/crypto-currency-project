@@ -48,7 +48,6 @@ export async function POST(req: Request) {
     }
     if (evt.type === "user.created") {
         const { id, username, email_addresses } = evt.data;
-        console.log(evt.data);
         try {
             const newUser = await prisma.user.create({
                 data: {

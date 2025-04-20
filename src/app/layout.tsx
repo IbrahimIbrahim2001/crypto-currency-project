@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Crypto Currencies Dashboard",
     description: "List of Crypto Currencies Prices in US Dollars",
+
 };
 
 export default function RootLayout({
@@ -21,6 +22,7 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en" suppressHydrationWarning>
+                <head><meta name="apple-mobile-web-app-title" content="MyWebSite" /></head>
                 <ThemeProvider>
                     <body className={`${inter.className} text-primary dark:text-primary-dark md:bg-main-background dark:bg-dark-background`}>
                         <DrawerProvider>
