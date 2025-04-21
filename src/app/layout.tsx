@@ -22,7 +22,9 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en" suppressHydrationWarning>
-                <head><meta name="apple-mobile-web-app-title" content="MyWebSite" /></head>
+                <head>
+                    <meta name="apple-mobile-web-app-title" content="Crypto" />
+                </head>
                 <ThemeProvider>
                     <body className={`${inter.className} text-primary dark:text-primary-dark md:bg-main-background dark:bg-dark-background`}>
                         <DrawerProvider>
