@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
         description: 'Crypto currencies dashboard, charts, data, search, bookmark, exchange',
         start_url: '/',
         display: 'standalone',
-        theme_color: "#ffffff",
+        theme_color: "#111827",
         background_color: "#111827",
         icons: [
             {
