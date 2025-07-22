@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 
 import DrawerProvider from "@/context/DrawerProvider";
 import ModalProvider from "@/context/ModalProvider";
 import ThemeProvider from "@/context/ThemeProvider";
 import { ClerkProvider } from '@clerk/nextjs';
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({
+//     subsets: ["latin"],
+//     display: "swap",
+// })
 
 export const metadata: Metadata = {
     title: "Crypto Currencies Dashboard",
@@ -26,7 +29,7 @@ export default function RootLayout({
                     <meta name="apple-mobile-web-app-title" content="Crypto" />
                 </head>
                 <ThemeProvider>
-                    <body className={`${inter.className} text-primary dark:text-primary-dark md:bg-main-background dark:bg-dark-background`}>
+                    <body className={` text-primary dark:text-primary-dark md:bg-main-background dark:bg-dark-background`}>
                         <DrawerProvider>
                             <ModalProvider>
                                 {children}

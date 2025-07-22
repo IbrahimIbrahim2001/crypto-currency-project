@@ -29,7 +29,6 @@ async function getHistoricalChartData(currencyTo: string): Promise<{ labels: str
 
     const apiUrl = `https://api.apilayer.com/exchangerates_data/timeseries?start_date=${startDate}&end_date=${endDate}&base=USD&symbols=${currencyTo}&apikey=${API_LAYER_KEY}`;
 
-
     const response = await fetch(apiUrl);
     if (!response.ok) {
         const errorText = await response.text();
