@@ -34,8 +34,8 @@ export async function postNews(newsId: number, text: string, publisher: string) 
             data: {
                 userId: userId,
                 newsId: newsId,
-                text,
-                publisher
+                text: text ?? "",
+                publisher: publisher ?? ""
             }
         });
         return news;

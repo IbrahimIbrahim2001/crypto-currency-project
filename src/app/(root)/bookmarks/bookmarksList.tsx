@@ -77,7 +77,7 @@ export const BookmarksList = ({ bookmarks }: BookmarksListProps) => {
                                 <DeleteBookmarkButton newsId={bookmark.newsId} onDelete={() => setOptimisticBookmarks(bookmark.newsId)} />
                             </div>
                             <News news={newsItem}>
-                                <News.Title title={newsItem.title} />
+                                <News.Title title={newsItem?.title ?? ""} />
                                 <News.Publisher name={newsItem.source.title} />
                             </News>
                             <div className="block sm:hidden">

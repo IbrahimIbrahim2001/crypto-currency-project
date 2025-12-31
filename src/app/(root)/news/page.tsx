@@ -32,9 +32,9 @@ export default async function NewsList() {
                             className='bg-transparent dark:bg-dark-box rounded-md sm:border dark:border-transparent px-0 py-3 sm:px-3'>
                             <SaveNewsButton news={news} />
                             <News news={news} >
-                                <News.Title title={news.title} />
+                                <News.Title title={news?.title ?? ""} />
                                 <p className="text-sm flex space-x-0.5  opacity-70">
-                                    {/* <News.Publisher name={news.source.title} /> */}
+                                    <News.Publisher name={news.source?.title ?? "Anonymous"} />
                                     <span>|</span>
                                     <News.PublishTime publishedAt={news.published_at ? news.published_at : ""} />
                                 </p>

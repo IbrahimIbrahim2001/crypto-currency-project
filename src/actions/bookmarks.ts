@@ -9,8 +9,9 @@ export async function handlePostNews(news: {
     source: { title: string };
 }) {
     const newsId = news.id; // this is from news api
-    const text = news.title;
-    const publisher = news.source.title;
+    console.log(news.title);
+    const text = news?.title ?? "";
+    const publisher = "Anonymous";
     await postNews(newsId, text, publisher);
     revalidatePath("/news");
 }
